@@ -5,28 +5,21 @@
 ![downloads][downloads-badge]
 ![build][build-badge]
 
-<a href="https://www.buymeacoffee.com/piitaya" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+[original-repo]: https://github.com/piitaya/lovelace-mushroom
 
 ![Overview](https://user-images.githubusercontent.com/5878303/152332130-760cf616-5c40-4825-a482-bb8f1f0f5251.png)
 
-## What is mushroom ?
+## What is mushroom-better-sliders?
+This is a fork of the fantastic [Mushrooms UI Cards][original-repo] by piitaya, a collection of cards for [Home Assistant][home-assistant] Dashboard UI.
 
-Mushroom is a collection of cards for [Home Assistant][home-assistant] Dashboard UI.
+It focuses on making the light sliders more touch friendly.
 
-Mushroom mission is to propose easy to use components to build your [Home Assistant][home-assistant] dashboard.
+1. Sliders move on half speed when dragged by a finger (easier to hit small values)
+2. Sliders can be dragged from any point on the slider (like in iOS Home)
+3. Sliders let you preview your changes (live feedback)
 
-### Features
 
--   🛠 Editor for **all cards** and and **all options** (no need to edit `yaml`)
--   😍 Icon picker
--   🖌 Color picker
--   🚀 0 dependencies : no need to install another card.
--   🌈 Based on Material UI colors
--   🌓 Light and dark theme support
--   🎨 Optional theme customization
--   🌎 Internationalization
 
-The goal of Mushroom is not to provide custom card for deep customization. You can use the excellent [UI Lovelace Minimalist][ui-lovelace-minimalist] and [Button card][button-card] plugins for this.
 
 ## Installation
 
@@ -67,7 +60,7 @@ All the Mushroom cards can be configured using Dashboard UI editor.
 
 Different cards are available for differents entities :
 
--   🚨 [Alarm card](docs/cards/alarm-control-panel.md)
+-   🚨 [Alarm card](docs/cards/alarm.md)
 -   🪟 [Cover card](docs/cards/cover.md)
 -   🪄 [Entity card](docs/cards/entity.md)
 -   💨 [Fan card](docs/cards/fan.md)
@@ -83,7 +76,6 @@ Different cards are available for differents entities :
 -   💧 [Humidifier card](docs/cards/humidifier.md)
 -   🌡 [Climate card](docs/cards/climate.md)
 -   📑 [Select card](docs/cards/select.md)
--   🔢 [Number card](docs/cards/number.md)
 
 ### Theme customization
 
@@ -119,6 +111,14 @@ npm start
 ```
 
 Server will start on port `4000`.
+
+### Home assistant configuration
+
+Once both Home Assistant and mushroom are running, you have to add a resource to Home Assistant UI:
+
+-   Enable `Advanced Mode` in your profile page
+-   Go to Dashboard Resources and add the resource `http://localhost:4000/mushroom.js`:  
+    _Settings_ → _Dashboards_ → _More Options icon_ → _Resources_ → _Add Resource_ → Set _URL_ as `http://localhost:4000/mushroom.js` → Set _Resource type_ as `JavaScript Module`.
 
 ### Build
 
